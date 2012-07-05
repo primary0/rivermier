@@ -1,0 +1,8 @@
+<div id="tweets">
+	<div class="page-header">
+		<h1>Top Tweets</h1>
+	</div>
+	<p class="lead">Recent most popular tweets</p>
+	<%- @loading() %>
+	<ul class="thumbnails hide"></ul>
+</div>

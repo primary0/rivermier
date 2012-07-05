@@ -1,0 +1,29 @@
+== How to run the app locally
+
+1. Rename the provided configuration file named .env.sample file to .env and change the settings to your own preferences.
+2. Refer to the documentation on Heroku on how to use the configuration variables on your local machine. https://devcenter.heroku.com/articles/config-vars
+3. Install dependencies.
+        bundle install
+4. Migrate your database.
+        rake db:migarte        
+5. Populate Twitter followings into database.
+        rake maintenance:collect_users
+6. Start the app using foreman
+        foreman start --concurrency="web=1,worker=2"
+7. Start the Twitter Stream consumer
+        rake maintenance:start_consumer
+
+== How to deploying the app on Heroku
+
+1. Create and push the app to Heroku.
+        heroku apps:create my-twitter-app-name
+        git push heroku master
+2. Rename the provided configuration file named .env.sample file to .env and change the settings to your own preferences.
+3. Push the configurations to Heroku. For information on how to use the configuration variables on your local machine refer to the documentation on Heroku. https://devcenter.heroku.com/articles/config-vars
+        heroku config:push
+4. Migrate your database.
+        heroku rake db:migarte        
+5. Populate Twitter followings into database.
+        heroku run maintenance:collect_users
+6. Scale your Heroku app to use two workers (one for the API consumer and one for the data processor) and one web process.
+        heroku ps:scale worker=2 web=1

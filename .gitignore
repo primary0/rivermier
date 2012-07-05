@@ -1,4 +1,10 @@
 .DS_Store
+log/*
+tmp/*
+db/*.sqlite3
+.env
+*.dat
+*.sublime-project
+*.sublime-workspace
 *.tmproj
-*.rdb
 *.pid

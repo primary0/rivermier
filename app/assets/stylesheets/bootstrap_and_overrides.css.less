@@ -1,0 +1,232 @@
+@import "twitter/bootstrap/bootstrap";
+
+body { 
+	padding-top: 60px;
+}
+
+// @import "twitter/bootstrap/responsive";
+
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+
+@charset "utf-8";
+
+@font-face {
+	font-family: 'MV Waheed';
+	src: url('/assets/mv_waheed.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'MV Faseyha';
+	src: url('/assets/mv_faseyha.otf') format('opentype');
+}
+
+@fontAwesomeEotPath: '/assets/fontawesome-webfont.eot';
+@fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';
+@fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
+@fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
+@import "fontawesome";
+
+body { 
+	cursor: default;
+	section {
+		margin-bottom: 70px;
+	}
+	footer {
+		font-size: 13px;
+		margin: auto;
+		background-color: #eee;
+		padding: 50px 0;
+		form {
+			display: inline;
+		}
+	}	
+	a, a:hover, a:visited, a:link {
+		text-decoration: none;
+	}
+}
+
+.tweet {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+	float:left;
+	div {
+		position: relative;
+	}	
+	.photo {
+		width: 100%;
+	}
+	small, .action-buttons, .time {
+		font-size: 12px;
+		color: #999999;
+		a, a:link, a:visited, a:hover {
+			color: #999999;
+		}
+	}
+	hr {
+		margin: 5px;
+	}
+	img {
+		margin-bottom:10px;
+	}
+	.reply-icon {
+		display: inline-block;
+		width: 11px;
+		background: url('/assets/twitter.png') -3px 0;
+	}
+	.retweet-icon {
+		display: inline-block;
+		width: 15px;
+		background: url('/assets/twitter.png') -80px 0;
+	}
+	.favorite-icon {
+		display: inline-block;
+		width: 16px;
+		background: url('/assets/twitter.png') -33px 0;
+	}
+	.username {
+		padding: 0 18px 0 0;
+		background: url('/assets/bird.png') no-repeat right;
+	}
+	p a, p a:link, p a:visited, p a:hover {
+		color: #0084B4;
+	}
+	.profile-picture {
+		margin-top: 5px;
+		width: 100%;
+	}
+	p {
+		line-height: 1.4em;
+		margin-bottom: 0;
+		word-wrap: break-word;
+	}
+}
+
+.large, .medium {	
+	.tweet-wrapper {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		margin-right: 30px;
+		margin-left: 50px;		
+	}	
+	p {	
+		font-weight: bold;
+		font-size: 24px;
+		line-height:1em;
+		color: #444;
+		margin-bottom: 10px;
+	}	
+}
+
+.large {	
+	.tweet-wrapper {
+		padding: 50px;
+	}
+	p {	
+		font-size: 30px;
+		}	
+}
+
+#urls {
+	.large {
+		h2 {
+			font-size: 38px;
+			font-weight: bold;
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+}
+
+.loading {
+	margin-top: 120px;
+	margin-bottom: 150px;
+	text-align: center;
+	min-height: 100px;
+	font-size: 30px;
+	color: #333;
+}
+
+li.login {
+	padding-top: 10px;
+}
+
+.image-tweet {
+	margin-bottom: 20px;
+	.image img {
+		border: 1px solid #ccc;
+		box-shadow: 2px 2px 2px #ccc;
+	}
+}
+
+.photo-tweet {
+	height: 550px;
+}
+
+.video-tweet {
+	height: 350px;
+}
+
+#loading-gif {
+	margin: 100px 0 120px 0;
+	text-align: center;
+}
+
+.thaana {
+	text-align: right;
+	direction: rtl;
+	.description {
+		font-family: "MV Faseyha","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-size: 14px;
+		line-height: 25px;	
+		word-spacing: -5px;
+	}
+	.title {
+		font-size: 22px;
+		line-height: 25px;
+		font-weight: normal;
+		font-family: "MV Waheed","Helvetica Neue",Helvetica,Arial,sans-serif;
+	}	
+}
+
+.url-tweet > .tweet-wrapper {
+	padding: 0 10px;
+}
+
+.url-tweet > .tweet-wrapper > .row-fluid {
+	color: #999;
+}
+
+.url {
+	padding-top: 10px;
+	margin-bottom: 10px;
+	border-top: 1px solid #eee;
+	p {
+		font-size: 16px;
+	}
+	h3 a, h3 a:link, h3 a:visited {
+		color: #333;
+	}
+	h3 a:hover {
+		color: #0084B4	
+	}
+}
+
+h3 {
+	line-height: 1.1em;
+}
+
+.thaana {
+	h3 {
+		font-family: "MV Waheed";
+		font-weight: bold;
+		line-height: 1.5em;
+	}	
+	p {
+		font-size: 16px;
+		font-family: "MV Faseyha";
+	}	
+}

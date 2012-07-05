@@ -1,0 +1,13 @@
+<div class="span4 tweet">
+	<div class="row-fluid">
+		<div class="span2">
+			<img src="<%= @user.profile_image_url %>" class="profile-picture" />
+		</div>
+		<div class="span10">
+			<strong><%= @user.name %></strong>
+			<small class="username"><%= "@#{@user.screen_name}" %></small>
+			<p><%= @tweet.get('text') %></p>
+			<%- @actionButtons(tweet_id: @tweet.get('tweet_id'), screen_name: @user.screen_name, created_at: @tweet.get('created_at')) %>
+		</div>
+	</div>
+</div>

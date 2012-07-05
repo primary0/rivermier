@@ -1,0 +1,16 @@
+<div class="navbar-inner">
+  <div class="container">
+  	<a href="/" class="brand">rivermier</a>    
+    <div class="nav-collapse">
+      <ul class="nav">
+      	<li><a href="#" id="nav-link-tweets">Twitter</a></li>
+        <li><a href="#" id="nav-link-urls">News</a></li>
+        <li><a href="#" id="nav-link-photos">Instagram</a></li>
+        <li><a href="#" id="nav-link-videos">YouTube</a></li>      	
+      </ul>
+      <ul class="nav pull-right">
+        <li class="login"><span id="login"></span></li>
+      </ul>
+    </div>        
+  </div>
+</div>

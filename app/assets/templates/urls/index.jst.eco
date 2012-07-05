@@ -1,0 +1,9 @@
+<div id="urls">
+	<div class="page-header">
+		<h1>News</h1>
+	</div>
+	<p class="lead">Recently Posted News Articles</p>
+	<%- @loading() %>
+	<ul class="thumbnails"></ul>
+	<div class="hide" id="loading-gif"><img src='/assets/loading.gif' ></div>
+</div>

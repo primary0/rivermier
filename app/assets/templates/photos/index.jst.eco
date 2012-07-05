@@ -1,0 +1,9 @@
+<div id="photos">
+	<div class="page-header">
+		<h1>Instagram Photos</h1>
+	</div>
+	<p class="lead">Recently Posted Photos on Instagram</p>
+	<%- @loading() %>
+	<ul class="thumbnails"></ul>
+	<div class="hide" id="loading-gif"><img src='/assets/loading.gif' ></div>
+</div>

@@ -1,0 +1,22 @@
+<div class="span12 tweet large">	
+	<div class="tweet-wrapper">		
+		<div>
+			<h2><%= @url.get('title') %></h2>
+			<p><%= @url.get('description') %></p>
+		</div>	
+		<div class="row-fluid">		
+			<div class="span1">
+				<img src="<%= @user.profile_image_url %>" class="profile-picture" />
+			</div>
+			<div class="span11">
+				<div>
+					<strong><%= @user.name %></strong>
+				</div>
+				<div>
+					<small class="username"><%= "@#{@user.screen_name}" %></small>
+				</div>
+			</div>
+		</div>
+		<%- @actionButtons(tweet_id: @tweet.tweet_id, screen_name: @user.screen_name, created_at: @tweet.created_at) %>
+	</div>
+</div>

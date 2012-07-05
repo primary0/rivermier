@@ -1,6 +1,0 @@
-<div class="tweets">
-	<% @photos.each do |tweet| %>
-		<%= partial :"mobile/partials/tweet", :locals => {:tweet => tweet} %>
-		<%= partial :"mobile/partials/photo", :locals => {:tweet => tweet} %>		
-	<% end %>
-</div>

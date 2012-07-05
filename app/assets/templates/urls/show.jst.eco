@@ -1,0 +1,24 @@
+<div class="span6 tweet url-tweet hide">
+	<div class="tweet-wrapper">
+		<div class="url">
+			<% if @url.get('image') != undefined: %>
+				<div class="image">
+					<img src="<%= @url.get('image') %>" class="photo" />
+				</div>				
+			<% end %>	
+			<h3><a href="<%= @url.get('url') %>" ><%= @url.get('title') %></a></h3>
+			<p><%= @url.get('description') %></p>
+		</div>
+		<div class="row-fluid">
+			<div class="span1">
+				<img src="<%= @user.profile_image_url %>" class="profile-picture" />
+			</div>
+			<div class="span11">
+				<strong><%= @user.name %></strong>
+				<small class="username"><%= "@#{@user.screen_name}" %></small>
+				<p><%= @tweet.text %></p>
+				<%- @actionButtons(tweet_id: @tweet.tweet_id, screen_name: @user.screen_name, created_at: @tweet.created_at) %>
+			</div>
+		</div>
+	</div>
+</div>

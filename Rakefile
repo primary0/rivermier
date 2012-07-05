@@ -1,8 +1,7 @@
-require 'rubygems'
-require "bundler/setup"
-require 'resque/tasks'
+#!/usr/bin/env rake
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-require File.expand_path(File.dirname(__FILE__) + '/lib/tweet.rb')
-require File.expand_path(File.dirname(__FILE__) + '/lib/delete.rb')
-require File.expand_path(File.dirname(__FILE__) + '/lib/dispatch.rb')
-require File.expand_path(File.dirname(__FILE__) + '/lib/daily_digest.rb')
+require File.expand_path('../config/application', __FILE__)
+
+Rivermier::Application.load_tasks

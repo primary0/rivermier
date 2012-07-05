@@ -1,8 +1,0 @@
-<% if @offset && @offset == 0 %>
-	<h3 id="topic-heading"><%= @topic.titleize %></h3>
-	<hr />
-<% end %>
-<%= partial :"partials/tweet", :collection => @tweets %>
-<% if @count > @offset + $TWEETS_PER_PAGE %>
-	<div id="load-more-today-button" class="load-more-query load-button well" topic="<%= @topic %>" offset="<%= @offset + $TWEETS_PER_PAGE %>">Load More</div>
-<% end %>

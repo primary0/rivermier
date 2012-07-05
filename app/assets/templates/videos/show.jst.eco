@@ -1,0 +1,18 @@
+<div class="span6 tweet video-tweet">
+	<div class="tweet-wrapper">
+		<div class="video">
+			<iframe "type='text/html' width='460' height='280' src='http://www.youtube.com/embed/<%= @video.get('media_id') %>?autoplay=0&origin=http://rivermier.com' frameborder='0'" />			
+		</div>
+		<div class="row-fluid">
+			<div class="span2">
+				<img src="<%= @user.profile_image_url %>" class="profile-picture" />
+			</div>
+			<div class="span10">
+				<strong><%= @user.name %></strong>
+				<small class="username"><%= "@#{@user.screen_name}" %></small>
+				<p><%= @tweet.text %></p>
+				<%- @actionButtons(tweet_id: @tweet.tweet_id, screen_name: @user.screen_name, created_at: @tweet.created_at) %>
+			</div>
+		</div>
+	</div>
+</div>
