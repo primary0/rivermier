@@ -1,0 +1,10 @@
+<div class="tweets">
+	<% @videos.each do |tweet| %>
+		<%= partial :"partials/tweet", :locals => {:tweet => tweet} %>
+		<div <%= "class='row-fluid borderless entity high video_#{tweet.videos.first.media_id}'" %>>
+			<div class="span12">
+				<iframe <%= "type='text/html' width='550' height='335' src='http://www.youtube.com/embed/#{tweet.videos.first.media_id}?autoplay=0&wmode=opaque&origin=http://rivermier.com' frameborder='0'" %> />
+			</div>
+		</div>
+	<% end %>
+</div>                          

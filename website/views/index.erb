@@ -1,0 +1,63 @@
+<div class="span3">
+  <div class="well sidebar-nav trend-box">
+    <ul class="nav nav-list">
+      <li class="nav-header">Latest Trends <span class="trend-updated-at">( <span class="trend-time" title="<%= @latest_trend_time.iso8601 %>"></span> ago )</span></li>
+			<li id="trends" class="topics" tags="<%= @trends.collect{|x|x.gsub(/\#/, "")}.join(" ") %>">
+				<% @trends.each do |trend| %>
+					<a href="#" enabled="true"><%= trend %></a>
+				<% end %>
+			</li>
+    </ul>
+  </div>
+  <div class="well sidebar-nav trend-box">
+    <ul class="nav nav-list">
+			<li class="help-bar"><small>New trends will be automatically loaded as soon as they are discovered, and the incoming tweets will reflect the new trends.</small></li>
+    </ul>
+  </div>
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+			<a href="https://twitter.com/rivermier" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @rivermier</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>			
+    </ul>
+  </div>
+  <div class="well sidebar-nav">
+    <ul class="nav nav-list">
+			<li class="help-bar"><small>To join simply follow @rivermier and to completely opt out block the bot on Twitter. Private tweets and contents will not be displayed in the feeds. When a user deletes a tweet, it will be immediately removed from our database and from user screens.</small></li>
+    </ul>
+  </div>
+</div>
+<div class="span9">
+	<div class="tabbable">
+	  <ul class="nav nav-pills live-stream-nav">
+	    <li class="active"><a href="#trend-makers" data-toggle="pill" id="trend-makers-button">Trend Makers</a></li>
+	    <li><a href="#popular-tweets" data-toggle="pill" id="popular-tweets-button">Popular Tweets</a></li>
+	    <li><a href="#media" data-toggle="pill" id="media-button">Photos</a></li>
+	    <li><a href="#videos" data-toggle="pill" id="videos-button">Videos</a></li>
+	  </ul>
+	  <div class="tab-content">
+	    <div class="tab-pane active in" id="trend-makers">
+				<div class="tweets">					
+					<%= partial :"partials/tweet", :collection => @tweets %>
+				</div>
+	    </div>
+	    <div class="tab-pane" id="popular-tweets">
+				<div class="loading">
+					<div>Loading tweets...</div>
+					<img src="/assets/img/loading.gif" />
+				</div>
+	    </div>
+	    <div class="tab-pane" id="media">
+				<div class="loading">
+					<div>Loading photos...</div>
+					<img src="/assets/img/loading.gif" />
+				</div>
+	    </div>
+	    <div class="tab-pane" id="videos">
+				<div class="loading">
+					<div>Loading videos...</div>
+					<img src="/assets/img/loading.gif" />
+				</div>
+	    </div>											
+	  </div>
+	</div>	
+</div>

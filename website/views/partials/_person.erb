@@ -1,0 +1,12 @@
+<div class="span4">
+	<div class="span1 profile_picture">
+		<img <%= "src='#{user.profile_image_url}'" %>/>
+	</div>
+	<div class="span2 relative person_details">
+		<strong>
+			<a <%= "href='https://twitter.com/#{user.screen_name}' title='@#{user.screen_name}'" %> target="_blank" ><%= user.name %></a>
+		</strong>
+		<small class="username"><%= "@#{user.screen_name}" %></small> 
+		<p><small><%= count %> <%= type_of_count %></small></p>
+	</div>	 
+</div>

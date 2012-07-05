@@ -1,0 +1,37 @@
+<div class="row-fluid" id="people-contents">
+	<h2>Most Retweeted</h2>                
+	<hr />              	
+	<% @daily_digest.retweeted_people.in_groups_of(3, false) do |people_array| %>
+		<div class="row-fluid">                             	
+			<% people_array.each do |person| %>
+				<% user = User.first(:user_id => person[0]) %>
+				<% count = person[1] %>	
+				<%= partial :"partials/person", :locals => {:user => user, :count => count, :type_of_count => "retweets"} %>
+			<% end %>
+		</div>
+	<% end %>       
+	<hr />	
+	<h2>Most Replied To</h2>                  
+	<hr />              	
+	<% @daily_digest.replied_to_people.in_groups_of(3, false) do |people_array| %>
+		<div class="row-fluid">                             	
+			<% people_array.each do |person| %>
+				<% user = User.first(:user_id => person[0]) %>
+				<% count = person[1] %>
+				<%= partial :"partials/person", :locals => {:user => user, :count => count, :type_of_count => "replies"} %>
+			<% end %>
+		</div>
+	<% end %>	           
+	<hr />
+	<h2>Most Active</h2>   
+	<hr />
+	<% @daily_digest.active_people.in_groups_of(3, false) do |people_array| %>
+		<div class="row-fluid">                             	
+			<% people_array.each do |person| %>
+				<% user = User.first(:user_id => person[0]) %>
+				<% count = person[1] %>	
+				<%= partial :"partials/person", :locals => {:user => user, :count => count, :type_of_count => "tweets"} %>
+			<% end %>
+		</div>
+	<% end %>	
+</div>

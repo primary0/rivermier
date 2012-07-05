@@ -1,0 +1,21 @@
+<div class="row-fluid" id="topics-contents">
+	<div class="span3">
+	  <div class="well sidebar-nav">
+	    <ul class="nav nav-list">
+	      <li class="nav-header">Topics</span></li>
+				<li class="trend-button" trend="all"><a href='#'>All Topics</a></li>		
+				<% @trends.each do |trend| %>
+					<li class="trend-button" trend="<%= trend.gsub(/\A#/, "") %>"><a><%= format_tag(trend) %></a></li>
+				<% end %>
+	    </ul>
+	  </div>				
+	</div>	
+	<div class="span9 tweets">
+		<h3 id="topic-heading">All</h3>  
+		<hr />
+		<%= partial :"partials/tweet", :collection => @tweets %>
+		<% if @count > $TWEETS_PER_PAGE %>
+			<div id="load-more-today-button" class="load-more-query load-button well" topic="all" offset="<%= $TWEETS_PER_PAGE %>">Load More</div>
+		<% end %>
+	</div>
+</div>

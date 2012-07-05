@@ -1,0 +1,20 @@
+<div <%= "class='row-fluid tweet tweet_#{tweet.tweet_id}'" %>>
+	<div class="span1 profile_picture">
+		<img <%= "src='#{tweet.user.profile_image_url}'" %>/>
+	</div>
+	<div class="span11 relative">
+		<strong>
+			<a <%= "href='https://twitter.com/#{tweet.user.screen_name}' title='@#{tweet.user.screen_name}'" %> target="_blank" ><%= tweet.user.name %></a>
+		</strong>
+		<small class="username"><%= "@#{tweet.user.screen_name}" %></small>
+		<span class="time" <%= "title='#{tweet.created_at.iso8601}'" %>></span>												
+		<div class="hide icons">
+			<span class="reply"><span class="reply-icon twitter-icon">&nbsp;</span><a <%= "href='https://twitter.com/intent/tweet?in_reply_to=#{tweet.tweet_id}'" %>>Reply</a></span>
+			<span class="retweet"><span class="retweet-icon twitter-icon">&nbsp;</span><a <%= "href='https://twitter.com/intent/retweet?tweet_id=#{tweet.tweet_id}'" %>>Retweet</a></span>
+			<span class="favorite"><span class="favorite-icon twitter-icon">&nbsp;</span><a <%= "href='https://twitter.com/intent/favorite?tweet_id=#{tweet.tweet_id}'" %>>Favorite</a></span>													
+			<span>&nbsp;.&nbsp;</span>													
+			<span><a <%= "href='https://twitter.com/#{tweet.user.screen_name}/status/#{tweet.tweet_id}' target='_blank'" %>>Open</a></span>
+		</div>
+		<p <%= "class='tweet-text #{tweet.tweet_id}'" %>><span class="original-text hide"><%= tweet.text %></span></p>
+	</div>
+</div>

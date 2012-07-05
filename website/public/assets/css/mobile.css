@@ -1,0 +1,105 @@
+#trends {
+	font-size: 13px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background-color: #fff;
+}
+.trends-title {
+	text-transform: uppercase;
+	color: #999;
+	font-size: 12px;
+	font-weight: bold;
+}
+#trends p {
+	margin-top: 3px;
+}
+.tweet{
+	font-size: 13px;
+	margin: 5px 0 5px 0;
+	padding: 5px 0 10px 0;
+	border-bottom: 1px solid #ccc;
+	min-height: 50px;
+}
+.tweet-details a, .tweet-details a:link, .tweet-details a:visited, .tweet-details a:hover {
+	color: #666;
+	font-weight: none;
+	text-decoration: none;
+}
+.profile_picture {
+	float: left;	
+	margin: 0 10px 0 0;
+}
+
+.profile_picture img {	
+	width: 48px;
+	height: 48px;
+	margin-top: 2px;
+}
+
+.tweet-details {
+	overflow: auto;	
+}
+.clear { 
+	clear: both;
+}
+p {
+	margin: 0px;
+	padding: 0px;
+}
+.hide {
+	display: none;
+}
+.entity {
+	margin-top :15px;
+}
+.load-more {	
+	font-size: 13px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background-color: #FEFFEF;		
+	text-align: center;
+	min-height: 18px;
+	margin-top: 10px;
+}
+.username {
+	padding: 0 18px 0 0;
+	background: url('http://rivermier.com/assets/img/bird.png') no-repeat right;	
+}
+h1 img {
+	height: 15px;
+}
+.time {
+	font-size: 12px;
+	color: #999999;
+	text-align: right;
+	float: right;
+}
+.tweet_actions {
+	text-align: center;
+	position: relative;	
+}               
+.icons {
+	font-size: 12px;	
+}
+.icons a, .icons a:link, .icons a:visited, .icons a:hover  {
+	color: #999999;
+	text-decoration: none;	
+}           
+.reply-icon {
+	display: inline-block;	
+	width: 11px;
+	background: url('http://rivermier.com/assets/img/twitter.png') -3px 0;	
+}
+.retweet-icon {
+	display: inline-block;		
+	width: 15px;
+	background: url('http://rivermier.com/assets/img/twitter.png') -80px 0;	
+}
+.favorite-icon {
+	display: inline-block;		
+	width: 16px;
+	background: url('http://rivermier.com/assets/img/twitter.png') -33px 0;
+}
+.twitter-icon {
+	margin: 0 1px 0 5px;
+}
