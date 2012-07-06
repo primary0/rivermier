@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rivermier by primary0</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Rivermier</h1>
+        <p>Tweet aggregator, content and trend analyzer</p>
+
+        <p class="view"><a href="https://github.com/primary0/rivermier">View the Project on GitHub <small>primary0/rivermier</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/primary0/rivermier/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/primary0/rivermier/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/primary0/rivermier">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Requirements</h1>
+
+<ul>
+<li>Redis</li>
+<li>Mongodb</li>
+<li>Ruby</li>
+<li>Rubygems</li>
+<li>God</li>
+<li>Bundler gem</li>
+</ul><h1>Setup</h1>
+
+<ul>
+<li>Run bundle install.</li>
+<li>Fill in Twitter auth details in config/config.rb</li>
+<li>Setup God to initialize with the configuration file config/config.god</li>
+<li>Start Juggernaut.</li>
+<li>Setup your favorite web server to run the Sinatra app website/config.run </li>
+</ul><h1>Executables</h1>
+
+<p><strong>bin/daemon.rb</strong> : Daemon script for launching Twitter streaming API listener. Run by God.</p>
+
+<p><strong>bin/analytics.rb</strong> : Trending topics analyzer script. Run by cron.</p>
+
+<p><strong>bin/collect_users.rb</strong> : Synchronize Twitter followings. Run by cron.</p>
+
+<p><strong>bin/restart_script.sh</strong> : Daemon restarter bash script, triggered by Event Machine’s on connection error event. Run by cron.</p>
+
+<p><strong>bin/today_crawler.rb</strong> : DailyDigest curator script. Run by cron.</p>
+
+<p><strong>bin/indexer.rb</strong> : Mongo indexer. Run by cron.</p>
+
+<p><strong>bin/db_clean.rb</strong> : Database clean up. Run by cron.</p>
+
+<h1>Website</h1>
+
+<p>Sinatra app in website/config.ru</p>
+
+<h1>Disclaimer</h1>
+
+<p>2012 Mohmed Ashraf. Not affiliated with Twitter. Released under MIT license.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/primary0">primary0</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
