@@ -16,7 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>Rivermier</h1>
-        <p>Tweet aggregator, content and trend analyzer</p>
+        <p>Tweet aggregator and content curator</p>
 
         <p class="view"><a href="https://github.com/primary0/rivermier">View the Project on GitHub <small>primary0/rivermier</small></a></p>
 
@@ -28,46 +28,40 @@
         </ul>
       </header>
       <section>
-        <h1>Requirements</h1>
+        <p>== How to run the app locally</p>
 
-<ul>
-<li>Redis</li>
-<li>Mongodb</li>
-<li>Ruby</li>
-<li>Rubygems</li>
-<li>God</li>
-<li>Bundler gem</li>
-</ul><h1>Setup</h1>
+<ol>
+<li>Rename the provided configuration file named .env.sample file to .env and change the settings to your own preferences.</li>
+<li>Refer to the documentation on Heroku on how to use the configuration variables on your local machine. <a href="https://devcenter.heroku.com/articles/config-vars">https://devcenter.heroku.com/articles/config-vars</a>
+</li>
+<li>Install dependencies.
+    bundle install</li>
+<li>Migrate your database.
+    rake db:migarte<br>
+</li>
+<li>Populate Twitter followings into database.
+    rake maintenance:collect_users</li>
+<li>Start the app using foreman
+    foreman start --concurrency="web=0,worker=2"</li>
+<li>Start the Twitter Stream consumer
+    rake maintenance:start_consumer</li>
+</ol><p>== How to deploying the app on Heroku</p>
 
-<ul>
-<li>Run bundle install.</li>
-<li>Fill in Twitter auth details in config/config.rb</li>
-<li>Setup God to initialize with the configuration file config/config.god</li>
-<li>Start Juggernaut.</li>
-<li>Setup your favorite web server to run the Sinatra app website/config.run </li>
-</ul><h1>Executables</h1>
-
-<p><strong>bin/daemon.rb</strong> : Daemon script for launching Twitter streaming API listener. Run by God.</p>
-
-<p><strong>bin/analytics.rb</strong> : Trending topics analyzer script. Run by cron.</p>
-
-<p><strong>bin/collect_users.rb</strong> : Synchronize Twitter followings. Run by cron.</p>
-
-<p><strong>bin/restart_script.sh</strong> : Daemon restarter bash script, triggered by Event Machine’s on connection error event. Run by cron.</p>
-
-<p><strong>bin/today_crawler.rb</strong> : DailyDigest curator script. Run by cron.</p>
-
-<p><strong>bin/indexer.rb</strong> : Mongo indexer. Run by cron.</p>
-
-<p><strong>bin/db_clean.rb</strong> : Database clean up. Run by cron.</p>
-
-<h1>Website</h1>
-
-<p>Sinatra app in website/config.ru</p>
-
-<h1>Disclaimer</h1>
-
-<p>2012 Mohmed Ashraf. Not affiliated with Twitter. Released under MIT license.</p>
+<ol>
+<li>Create and push the app to Heroku.
+    heroku apps:create my-twitter-app-name
+    git push heroku master</li>
+<li>Rename the provided configuration file named .env.sample file to .env and change the settings to your own preferences.</li>
+<li>Push the configurations to Heroku. For information on how to use the configuration variables on your local machine refer to the documentation on Heroku. <a href="https://devcenter.heroku.com/articles/config-vars">https://devcenter.heroku.com/articles/config-vars</a>
+    heroku config:push</li>
+<li>Migrate your database.
+    heroku rake db:migarte<br>
+</li>
+<li>Populate Twitter followings into database.
+    heroku run maintenance:collect_users</li>
+<li>Scale your Heroku app to use two workers (one for the API consumer and one for the data processor) and one web process.
+    heroku ps:scale worker=2 web=1</li>
+</ol>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/primary0">primary0</a></p>
