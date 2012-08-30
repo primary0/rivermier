@@ -1,7 +1,8 @@
 <div class="span6 tweet url-tweet hide">
 	<div class="tweet-wrapper">
 		<div class="url">
-			<% if @url.get('image') != undefined: %>
+			<% console.log(@url.get('image')) %>
+			<% if @url.get('image') != null: %>
 				<div class="image">
 					<img src="<%= @url.get('image') %>" class="photo" />
 				</div>				
